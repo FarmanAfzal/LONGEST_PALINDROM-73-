@@ -1,0 +1,38 @@
+#roll no. 73 and name is farman
+def longest_palindrome(s):
+    # Importing Counter to count the frequency of characters
+    from collections import Counter
+    char_count = Counter(s)
+    length = 0
+    odd_found = False
+
+    
+    for count in char_count.values():
+        length += count // 2 * 2
+        
+        if count % 2 == 1:
+            odd_found = True
+
+    if odd_found:
+        length += 1
+
+    return length
+
+# example usage according to given file:
+example_1 = "abccccdd"
+example_2 = "a"
+print("# example usage according to given file:")
+print("example 1:("abccccdd")", longest_palindrome(example_1))
+print("example 2:("a")", longest_palindrome(example_2))
+# using another example
+print("# using another example")
+example_3 = str(input("Enter the string: "))
+print(longest_palindrome(example_3))
+
+OUTPUT:
+# Example usage according to given file:
+Example 1: 7
+Example 2: 1
+# using another example
+Enter the string: CIVIC HAM
+5
